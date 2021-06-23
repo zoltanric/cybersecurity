@@ -41,24 +41,21 @@ The configuration details of each machine may be found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
+Access is restricted to the machines on the internal network. Only the Jump-Box machine can accept connections from the Internet. SSH access to this machine is only allowed from my home network. 
 
-Only the Jump-Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 142.113.222.179
-
-Machines within the network can only be accessed via the Jump-Box.
+Machines within the network can only be accessed via SSH using the Jump-Box.
 - 10.0.0.4 
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses       |
 |:---------|:-------------------:|:--------------------------:|
-| Jump Box |    Yes              | 10.1.0.0/24 10.2.0.0/24 142.113.222.179   |
-| Elk-VM   |    No               | 10.0.0.0/24 10.2.0.0/24    |
-| DVWA-VM1 |    No               | 10.0.0.0/24 10.1.0.0/24    |
-| DVWA-VM2 |    No               | 10.0.0.0/24 10.1.0.0/24    |
-| DVWA-VM3 |    No               | 10.0.0.0/24 10.1.0.0/24    |
-| DVWA-VM4 |    No               | 10.0.0.0/24 10.1.0.0/24    |
+| Jump Box |    Yes              | 142.113.222.179            |
+| Elk-VM   |    No               | 10.0.0.4                   |
+| DVWA-VM1 |    No               | 10.0.0.4                   |
+| DVWA-VM2 |    No               | 10.0.0.4                   |
+| DVWA-VM3 |    No               | 10.0.0.4                   |
+| DVWA-VM4 |    No               | 10.0.0.4                   |
 
 ### Elk Configuration
 
@@ -97,7 +94,7 @@ SSH into the control node and follow the steps below:
   ```
   /etc/ansible
   ```
-  
+
 - Update the hosts file to include:
 
   ``` 
