@@ -24,7 +24,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures high-availability, in addition to restricting access to the network.
 
-Integrating an ELK server allows for the monitoring of log files and system metrics on the vulnrable VMs.
+Integrating an ELK server allows for the monitoring of system metrics and changes to the log files on the vulnrable VMs.
 
 The configuration details of each machine may be found below.
 
