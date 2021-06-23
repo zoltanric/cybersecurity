@@ -66,9 +66,13 @@ The playbook implements the following tasks:
 - The [install-metricbeat](Ansible/roles/install-metricbeat) folder contains the [main.yml](Ansible/roles/install-metricbeat/tasks/main.yml) file used to setup Meticbeat. This playbook downloads and installs the latest Metricbeat package, copies the [metricbeat.yml](Ansible/roles/install-metricbeat/files/metricbeat.yml) configuration file to the remote host, and commands are issued to setup and start the application. 
 - The [install-elk](Ansible/roles/install-elk) folder contains the [main.yml](Ansible/roles/install-elk/tasks/main.yml) file used to setup the ELK stack. This playbook installs Docker and python3-pip using apt-get, installs the pip docker module, and deploys a docker container running the ELK stack. 
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+The following screenshot displays the output of `docker ps` after successfully configuring the ELK instance.
 
-![Docker output](Images/elk-container.png)
+![Docker output](Images/docker-elk.png)
+
+The following screenshot displays the output of `docker ps` after successfully configuring the DVWA instance.
+
+![Docker output](Images/docker-dvwa.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
