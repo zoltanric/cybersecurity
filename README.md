@@ -113,5 +113,15 @@ SSH into the control node and follow the steps below:
   10.1.0.4 ansible_python_interpreter=/usr/bin/python3
   ```
 
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook:
+  ```
+  ansible-playbook main.yml
+  ```
 
+- Navigate to the web or IP address of the ELK machine using port 5601 to confirm it is working.
+  
+  ![Kibana](Images/web-kibana.png)
+
+- Navigate to the web or IP address of the DVWA machines to confirm it is working.
+  
+  ![DVWA](Images/web-dvwa.png)
