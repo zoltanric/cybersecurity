@@ -72,7 +72,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![Docker output](Images/elk-container.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -88,8 +88,21 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the contents of the [Ansible](Ansible) folder to: 
+  
+  > /etc/ansible
+
+- Update the hosts file to include:
+
+  > [webservers]\
+  10.2.0.4 ansible_python_interpreter=/usr/bin/python3\
+  10.2.0.5 ansible_python_interpreter=/usr/bin/python3\
+  10.2.0.6 ansible_python_interpreter=/usr/bin/python3\
+  10.2.0.7 ansible_python_interpreter=/usr/bin/python3\
+  \
+  [elk]\
+  10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
