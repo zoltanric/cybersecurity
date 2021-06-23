@@ -55,7 +55,9 @@ A summary of the access policies in place can be found in the table below.
 | DVWA-VM3 |    No               | 10.0.0.4                   |
 | DVWA-VM4 |    No               | 10.0.0.4                   |
 
-### Elk Configuration
+Access to port 5601 is allowed to the ELK-VM and incoming HTTP traffic is allowed to the webservers, but restricted only to my home network. 
+
+### Ansible Playbooks 
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. The [main.yml](Ansible/main.yml) ansible playbook was used to install and configure two groups of remote hosts on the network. The deployment can be setup with a single command and can be easily redeployed in an other environment. 
 
@@ -74,7 +76,7 @@ The following screenshot displays the output of `docker ps` after successfully c
 
 ![Docker output](Images/docker-dvwa.png)
 
-### Target Machines & Beats
+### Webservers & Beats
 This ELK server is configured to monitor the following machines:
 - 10.2.0.4
 - 10.2.0.5
@@ -82,13 +84,12 @@ This ELK server is configured to monitor the following machines:
 - 10.2.0.7
 
 The following Beats are installed on these machines:
-- Filebeats
-- Metricbeats
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- Filebeats
-- Metricbeats
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat tails files and sends the data to an output, in out case we are using log files as input to monitor user, application, and system activity.
+- Metricbeat collects metrics from a system or service, in our case we are monitoring container, webserver, and system performance. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
