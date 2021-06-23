@@ -55,7 +55,7 @@ A summary of the access policies in place can be found in the table below.
 | DVWA-VM3 |    No               | 10.0.0.4                   |
 | DVWA-VM4 |    No               | 10.0.0.4                   |
 
-Access to port 5601 is allowed to the ELK-VM and incoming HTTP traffic is allowed to the webservers, but restricted only to my home network. 
+Access to port 5601 is allowed to the ELK-VM and incoming HTTP traffic is allowed to the webservers, but access is restricted only to my home network. 
 
 ### Ansible Playbooks 
 
