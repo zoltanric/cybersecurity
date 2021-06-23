@@ -35,9 +35,9 @@ The configuration details of each machine may be found below.
 | Jump-Box | Gateway     | 10.0.0.4   | Ubuntu 18.04     |
 | Elk-VM   | Monitoring  | 10.1.0.4   | Ubuntu 18.04     |
 | DVWA-VM1 | Webserver   | 10.2.0.4   | Ubuntu 18.04     |
-| DVWA-VM1 | Webserver   | 10.2.0.5   | Ubuntu 18.04     |
-| DVWA-VM1 | Webserver   | 10.2.0.6   | Ubuntu 18.04     |
-| DVWA-VM1 | Webserver   | 10.2.0.7   | Ubuntu 18.04     |
+| DVWA-VM2 | Webserver   | 10.2.0.5   | Ubuntu 18.04     |
+| DVWA-VM3 | Webserver   | 10.2.0.6   | Ubuntu 18.04     |
+| DVWA-VM4 | Webserver   | 10.2.0.7   | Ubuntu 18.04     |
 
 ### Access Policies
 
