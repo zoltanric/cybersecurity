@@ -31,20 +31,21 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function    | IP Address | Operating System |
+|:---------|:-----------:|:----------:|:----------------:|
+| Jump-Box | Gateway     | 10.0.0.4   | Ubuntu 18.04     |
+| ELK      | Monitoring  | 10.1.0.4   | Ubuntu 18.04     |
+| DVWA-VM1 | Webserver   | 10.2.0.4   | Ubuntu 18.04     |
+| DVWA-VM1 | Webserver   | 10.2.0.5   | Ubuntu 18.04     |
+| DVWA-VM1 | Webserver   | 10.2.0.6   | Ubuntu 18.04     |
+| DVWA-VM1 | Webserver   | 10.2.0.7   | Ubuntu 18.04     |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Jump-Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
 
 Machines within the network can only be accessed by _____.
