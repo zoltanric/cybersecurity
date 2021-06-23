@@ -1,5 +1,5 @@
 # Cybersecurity
-Work related to my cybersecurity course
+Work related to my cybersecurity course.
 
 ## Automated ELK Stack Deployment
 
