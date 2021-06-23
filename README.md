@@ -11,8 +11,8 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 This document contains the following details:
 - Description of the Topology
-- Access Policies
-- ELK Configuration
+- Ansible Playbooks
+- ELK and DVWA Configuration
   - Beats in Use
   - Machines Being Monitored
 - How to Use the Ansible Build
@@ -59,7 +59,7 @@ Access to port 5601 is allowed to the ELK-VM and incoming HTTP traffic is allowe
 
 ### Ansible Playbooks 
 
-Ansible was used to automate configuration of the ELK machine and the DVWA webservers. No configuration was performed manually. The [main.yml](Ansible/main.yml) ansible playbook was used to install and configure two groups of remote hosts on the network. The deployment can be setup with a single command and can be easily redeployed in another environment. 
+Ansible was used to automate configuration of the ELK machine and the DVWA webservers. No configuration was performed manually. The [main.yml](Ansible/main.yml) ansible playbook was used to install and configure two groups of hosts on the network. The deployment can be setup with a single command and can be easily redeployed in another environment. 
 
 The playbook implements the following tasks:
 - The [main.yml](Ansible/main.yml) playbook is broken down into four distinct roles referencing the playbook files contained within the [roles](Ansible/roles) folder subdirectories. First, the webservers are configured using playbooks to install DVWA, Filebeat and Metricbeat. Second, the ELK stack is installed on another host group. 
