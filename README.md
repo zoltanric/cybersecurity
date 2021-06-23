@@ -61,10 +61,10 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - The [main.yml](Ansible/main.yml) playbook is broken down into four distinct roles referencing the playbook files contained within the [roles](Ansible/roles) folder subdirectories. First, the webservers are configured using playbooks to install DVWA, Filebeat and Metricbeat. Second, the ELK stack is installed on another host group. 
-- The [install-dvwa](Ansible/roles/install-dvwa) folder contains the [main.yml](Ansible/roles/install-dvwa/tasks/main.yml) file used to setup DVWA. This playbook is configured to install Docker and python-pip3 using apt-get, install the pip docker module, and deploy a docker webserver container configured to start at boot.  
-- The [install-filebeat](Ansible/roles/install-filebeat) folder contains the [main.yml](Ansible/roles/install-filebeat/tasks/main.yml) file used to setup Filebeat. 
-- The [install-metricbeat](Ansible/roles/install-metricbeat) folder contains the [main.yml](Ansible/roles/install-metricbeat/tasks/main.yml) file used to setup Meticbeat.
-- The [install-elk](Ansible/roles/install-elk) folder contains the [main.yml](Ansible/roles/install-elk/tasks/main.yml) file used to setup the ELK stack. 
+- The [install-dvwa](Ansible/roles/install-dvwa) folder contains the [main.yml](Ansible/roles/install-dvwa/tasks/main.yml) file used to setup DVWA. This playbook is configured to install Docker and python3-pip using apt-get, install the pip docker module, and to deploy a docker container running a webserver.  
+- The [install-filebeat](Ansible/roles/install-filebeat) folder contains the [main.yml](Ansible/roles/install-filebeat/tasks/main.yml) file used to setup Filebeat. This playbook is configured to download and install the latest Filebeat package, copy the [filebeat.yml](Ansible/roles/install-filebeat/files/filebeat.yml) configuration file to the remote host, and issue commands to setup and start the application. 
+- The [install-metricbeat](Ansible/roles/install-metricbeat) folder contains the [main.yml](Ansible/roles/install-metricbeat/tasks/main.yml) file used to setup Meticbeat. This playbook downloads and installs the latest Metricbeat package, copies the [metricbeat.yml](Ansible/roles/install-metricbeat/files/metricbeat.yml) configuration file to the remote host, and commands are issued to setup and start the application. 
+- The [install-elk](Ansible/roles/install-elk) folder contains the [main.yml](Ansible/roles/install-elk/tasks/main.yml) file used to setup the ELK stack. This playbook installs Docker and python3-pip using apt-get, installs the pip docker module, and deploys a docker container running the ELK stack. 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -77,11 +77,13 @@ This ELK server is configured to monitor the following machines:
 - 10.2.0.6
 - 10.2.0.7
 
-We have installed the following Beats on these machines:
+The following Beats are installed on these machines:
 - Filebeats
 - Metricbeats
 
 These Beats allow us to collect the following information from each machine:
+- Filebeats
+- Metricbeats
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
 ### Using the Playbook
