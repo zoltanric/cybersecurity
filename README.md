@@ -7,7 +7,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Network Diagram](Images/Network_Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the [main.yml](Ansible/main.yml) file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the [main.yml](Ansible/main.yml) file may be used to install only certain pieces of it, such as Filebeat. 
 
 This document contains the following details:
 - Description of the Topology
@@ -57,13 +57,14 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. The [main.yml](Ansible/main.yml) ansible playbook was used to install and configure two groups of remote hosts on the network. The deployment can be setup with a single command and can be easily redeployed in an other environment. 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- The [main.yml](Ansible/main.yml) playbook is broken down into four distinct roles referencing the playbook files contained within the [roles](Ansible/roles) folder subdirectories. First, the webservers are configured using playbooks to install DVWA, Filebeat and Metricbeat. Second, the ELK stack is installed on another host group. 
+- The [install-dvwa](Ansible/roles/install-dvwa) folder contains the [main.yml](Ansible/roles/install-dvwa/tasks/main.yml) file used to setup DVWA. This playbook is configured to install Docker and python-pip3 using apt-get, install the pip docker module, and deploy a docker webserver container configured to start at boot.  
+- The [install-filebeat](Ansible/roles/install-filebeat) folder contains the [main.yml](Ansible/roles/install-filebeat/tasks/main.yml) file used to setup Filebeat. 
+- The [install-metricbeat](Ansible/roles/install-metricbeat) folder contains the [main.yml](Ansible/roles/install-metricbeat/tasks/main.yml) file used to setup Meticbeat.
+- The [install-elk](Ansible/roles/install-elk) folder contains the [main.yml](Ansible/roles/install-elk/tasks/main.yml) file used to setup the ELK stack. 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
