@@ -24,7 +24,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures high-availability, in addition to restricting access to the network.
 
-Integrating an ELK server allows for the monitoring of system metrics and changes to the log files on the vulnrable VMs.
+Integrating an ELK server allows for the monitoring of system metrics and changes to the log files on the vulnerable VMs.
 
 The configuration details of each machine may be found below.
 
@@ -59,13 +59,13 @@ Access to port 5601 is allowed to the ELK-VM and incoming HTTP traffic is allowe
 
 ### Ansible Playbooks 
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. The [main.yml](Ansible/main.yml) ansible playbook was used to install and configure two groups of remote hosts on the network. The deployment can be setup with a single command and can be easily redeployed in an other environment. 
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually. The [main.yml](Ansible/main.yml) ansible playbook was used to install and configure two groups of remote hosts on the network. The deployment can be setup with a single command and can be easily redeployed in another environment. 
 
 The playbook implements the following tasks:
 - The [main.yml](Ansible/main.yml) playbook is broken down into four distinct roles referencing the playbook files contained within the [roles](Ansible/roles) folder subdirectories. First, the webservers are configured using playbooks to install DVWA, Filebeat and Metricbeat. Second, the ELK stack is installed on another host group. 
 - The [install-dvwa](Ansible/roles/install-dvwa) folder contains the [main.yml](Ansible/roles/install-dvwa/tasks/main.yml) file used to setup DVWA. This playbook is configured to install Docker and python3-pip using apt-get, install the pip docker module, and to deploy a docker container running a webserver.  
 - The [install-filebeat](Ansible/roles/install-filebeat) folder contains the [main.yml](Ansible/roles/install-filebeat/tasks/main.yml) file used to setup Filebeat. This playbook is configured to download and install the latest Filebeat package, copy the [filebeat.yml](Ansible/roles/install-filebeat/files/filebeat.yml) configuration file to the remote host, and issue commands to setup and start the application. 
-- The [install-metricbeat](Ansible/roles/install-metricbeat) folder contains the [main.yml](Ansible/roles/install-metricbeat/tasks/main.yml) file used to setup Meticbeat. This playbook downloads and installs the latest Metricbeat package, copies the [metricbeat.yml](Ansible/roles/install-metricbeat/files/metricbeat.yml) configuration file to the remote host, and commands are issued to setup and start the application. 
+- The [install-metricbeat](Ansible/roles/install-metricbeat) folder contains the [main.yml](Ansible/roles/install-metricbeat/tasks/main.yml) file used to setup Metricbeat. This playbook downloads and installs the latest Metricbeat package, copies the [metricbeat.yml](Ansible/roles/install-metricbeat/files/metricbeat.yml) configuration file to the remote host, and commands are issued to setup and start the application. 
 - The [install-elk](Ansible/roles/install-elk) folder contains the [main.yml](Ansible/roles/install-elk/tasks/main.yml) file used to setup the ELK stack. This playbook installs Docker and python3-pip using apt-get, installs the pip docker module, and deploys a docker container running the ELK stack. 
 
 The following screenshot displays the output of `docker ps` after successfully configuring the ELK instance.
@@ -88,7 +88,7 @@ The following Beats are installed on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- Filebeat tails files and sends the data to an output, in out case we are using log files as input to monitor user, application, and system activity.
+- Filebeat tails files and sends the data to an output, in our case we are using log files as input to monitor user, application, and system activity.
 - Metricbeat collects metrics from a system or service, in our case we are monitoring container, webserver, and system performance. 
 
 ### Using the Playbook
